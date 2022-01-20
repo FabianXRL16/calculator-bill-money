@@ -329,6 +329,10 @@ button:hover {
   background: var(--red);
 }
 @media (max-width: 750px) {
+  button:hover{
+    transform: scale(1);
+    box-shadow: none;
+  }
   .container {
     gap: 0px;
   }
