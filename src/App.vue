@@ -149,7 +149,7 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Dongle:wght@300;400&display=swap");
 :root {
   --bg-body: #abcffd;
-  --bg-conatiner: #edf5ff;
+  --bg-conatiner: #c0deff;
   --bg-conatiner-sub: rgba(255, 255, 255, 0.5);
   --red: #f87171;
   --green: #34d399;
