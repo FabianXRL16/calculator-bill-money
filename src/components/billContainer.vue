@@ -54,9 +54,6 @@
 <script>
 export default {
   name: "BillContainer",
-  data() {
-    return {};
-  },
   props: {
     value: Object,
   },
