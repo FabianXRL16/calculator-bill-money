@@ -11,7 +11,7 @@
           <i class="fas fa-undo-alt"></i>
         </button>
         <button class="print">
-          <i class="fas fa-download"></i>
+          <i class="fas fa-download" @click="print"></i>
         </button>
       </div>
     </div>
@@ -61,13 +61,9 @@ export default {
     reset() {
       this.$emit("resetTotal");
     },
-    // print() {
-    //   this.html2canvas(document.querySelector(".app"), {
-    //     onrendered: function (canvas) {
-    //       return this.Canvas2Image.saveAsPNG(canvas);
-    //     },
-    //   });
-    // },
+    print() {
+      this.$emit("printCalculator");
+    },
   },
 };
 </script>
@@ -119,5 +115,39 @@ button:hover {
 }
 .print {
   background: var(--red);
+}
+@media (max-width: 750px) {
+  .container {
+    gap: 0px;
+  }
+  .containerTotal {
+    flex-direction: column;
+  }
+  .result {
+    font-size: 70px;
+    line-height: 50px;
+    color: var(--blue);
+  }
+  .result strong {
+    font-size: 30px;
+  }
+  .date {
+    font-size: 20px;
+  }
+  .controls {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px
+  }
+  button {
+    width: 50%;
+    margin: 0;
+  }
+  .result {
+  font-size: 65px;
+  line-height: 20px;
+  text-align: center;
+  margin-bottom: 15px;
+}
 }
 </style>
