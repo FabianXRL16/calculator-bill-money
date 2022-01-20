@@ -137,17 +137,17 @@ button:hover {
   .controls {
     display: flex;
     justify-content: space-between;
-    gap: 10px
+    gap: 10px;
   }
   button {
     width: 50%;
     margin: 0;
   }
   .result {
-  font-size: 65px;
-  line-height: 20px;
-  text-align: center;
-  margin-bottom: 15px;
-}
+    font-size: 65px;
+    line-height: 20px;
+    text-align: center;
+    margin-bottom: 15px;
+  }
 }
 </style>
