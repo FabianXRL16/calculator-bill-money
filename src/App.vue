@@ -1,9 +1,10 @@
 <template>
-  <div id="app">
+  <div id="app" ref="app">
     <bill v-model="total" />
     <money v-model="total" />
-    <total :total="total" @resetTotal="resetPrice" />
+    <total :total="total" @resetTotal="resetPrice" @printCalculator="print" />
     <img class="logo" src="./assets/logo.svg" alt="" />
+    <img :src="output" />
   </div>
 </template>
 
@@ -27,6 +28,9 @@ export default {
     resetPrice() {
       this.total = {};
     },
+    print() {
+      console.log("Printing...");
+    },
   },
 };
 </script>
@@ -34,7 +38,7 @@ export default {
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Dongle:wght@300;400&display=swap");
 :root {
-  --bg-body: #dbeafe;
+  --bg-body: #abcffd;
   --bg-conatiner: #edf5ff;
   --bg-conatiner-sub: rgba(255, 255, 255, 0.5);
   --red: #f87171;
@@ -85,8 +89,10 @@ html {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  box-sizing: border-box;
 }
 .containerForm {
+  box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -127,8 +133,42 @@ input[type="number"] {
 }
 .logo {
   position: absolute;
-  height: 100px;
+  height: 8vw;
   bottom: 40px;
   left: 40px;
+}
+@media (max-width: 750px) {
+  #app {
+    width: 100vw;
+    height: 85vh;
+    grid-template-rows: 1.3fr 1fr;
+    background-color: transparent;
+    box-shadow: none;
+    gap: 20px;
+    padding: 20px;
+  }
+  .logo {
+    display: none;
+  }
+}
+@media (max-width: 650px) {
+  #app {
+    width: 100vw;
+    height: 90vh;
+    grid-template-rows: 2fr 1fr;
+    background-color: transparent;
+    box-shadow: none;
+    gap: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  .containerForm {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+  }
 }
 </style>
