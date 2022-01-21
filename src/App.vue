@@ -76,6 +76,7 @@
 </template>
 
 <script>
+import html2canvas from "html2canvas";
 export default {
   name: "App",
   components: {},
@@ -126,7 +127,15 @@ export default {
   },
   methods: {
     print() {
-      console.log("hola");
+      html2canvas(document.querySelector("#app")).then((canvas) => {
+        var image = canvas
+          .toDataURL("image/png")
+          .replace("image/png", "image/octet-stream");
+        var a = document.createElement("a");
+        a.href = image;
+        a.download = `ingresos-${this.date}.png`;
+        a.click();
+      });
     },
     reset() {
       this.b1 = null;
@@ -329,7 +338,7 @@ button:hover {
   background: var(--red);
 }
 @media (max-width: 750px) {
-  button:hover{
+  button:hover {
     transform: scale(1);
     box-shadow: none;
   }
