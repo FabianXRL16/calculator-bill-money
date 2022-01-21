@@ -261,7 +261,7 @@ input[type="number"] {
     width: 100vw;
     height: 85vh;
     grid-template-rows: 1.3fr 1fr;
-    background-color: transparent;
+    background-color: var(--bg-body);
     box-shadow: none;
     gap: 20px;
     padding: 20px;
@@ -275,7 +275,7 @@ input[type="number"] {
     width: 100vw;
     height: 90vh;
     grid-template-rows: 2fr 1fr;
-    background-color: transparent;
+    background-color: var(--bg-body);
     box-shadow: none;
     gap: 10px;
     padding: 10px;
